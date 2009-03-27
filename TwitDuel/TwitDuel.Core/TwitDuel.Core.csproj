@@ -68,6 +68,7 @@
     <Compile Include="TweetInterpreter.cs" />
     <Compile Include="TweetLexer.cs" />
     <Compile Include="TweetRepository.cs" />
+    <Compile Include="TwitterMessage.cs" />
     <Compile Include="TwitterUser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,14 @@ namespace TwitDuel.Core
     public interface ITweetRepository
     {
         IEnumerable<Tweet> GetTweetsSince(DateTime @checked);
-        void Create(Tweet tweet);
+        void Create(string message);
     }
 
     public class TweetRepository : ITweetRepository
     {
         private ITwitterDataAccess _DataAccess;
         private List<Tweet> _Repo;
+        private DateTime _LastChecked;
 
         public TweetRepository(ITwitterDataAccess dataAccess)
         {
@@ -23,14 +24,15 @@ namespace TwitDuel.Core
 
         public IEnumerable<Tweet> GetTweetsSince(DateTime @checked)
         {
+            _LastChecked = @checked;
             var newMessages = _DataAccess.GetMessages();
             _Repo.AddRange(newMessages);
             return newMessages;
         }
 
-        public void Create(Tweet tweet)
+        public void Create(string message)
         {
-            throw new NotImplementedException();
+            _DataAccess.SendMessage(message);
         }
     }
 }

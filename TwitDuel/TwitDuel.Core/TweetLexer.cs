@@ -8,10 +8,10 @@ namespace TwitDuel.Core
 {
     public class TweetLexer
     {
-        private Tweet _Tweet;
+        private readonly Tweet _Tweet;
         public Symbol CurrentSymbol;
         private int _CurrentIndex;
-        private int _EndIndex;
+        private readonly int _EndIndex;
 
         public TweetLexer(Tweet tweet)
         {
@@ -48,7 +48,9 @@ namespace TwitDuel.Core
                 _CurrentIndex++;
             }
 
-            return _GetSymbol(currentSymbol);
+            CurrentSymbol = _GetSymbol(currentSymbol);
+
+            return CurrentSymbol;
         }
 
         private Symbol _GetSymbol(string symbol)
@@ -56,7 +58,7 @@ namespace TwitDuel.Core
             if(symbol.StartsWith("@"))
                 return new UserSymbol(symbol);
             if(symbol.StartsWith("#"))
-                new TagSymbol(symbol);
+                return new TagSymbol(symbol);
 
             return null;
         }

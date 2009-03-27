@@ -30,16 +30,16 @@ namespace TwitDuel.Core
                 duelCommands.Add(duelCommand);
             }
 
-            var responses = new List<Tweet>();
+            var responses = new List<TwitterMessage>();
             foreach(var command in duelCommands)
             {
                 var response = _DuelInterpreter.CreateResponse(command);
-                responses.Add(response);
+                if(response != null) responses.Add(response);
             }
 
             foreach(var response in responses)
             {
-                _TweetRepo.Create(response);
+                _TweetRepo.Create(response.Message);
             }
         }
     }

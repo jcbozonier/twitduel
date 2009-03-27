@@ -36,7 +36,7 @@ namespace TwitDuel.Core
             if (symbolInterpreter.IsDuelStart(symbolList))
             {
                 var victim = symbolList.Single(symbol => symbol is UserSymbol) as UserSymbol;
-                return new DuelStartCommand(new TwitterUser() {screen_name = victim.Name});
+                return new DuelStartCommand(new TwitterUser() {screen_name = victim.Name}, tweet.user);
             }
 
             return new DoNothingDuelCommand();

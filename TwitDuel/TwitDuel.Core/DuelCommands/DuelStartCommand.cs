@@ -7,11 +7,13 @@ namespace TwitDuel.Core.DuelCommands
 {
     public class DuelStartCommand : DuelCommand
     {
-        private TwitterUser _Victim;
+        public TwitterUser Aggressor { get; private set; }
+        public TwitterUser Victim { get; private set; }
 
-        public DuelStartCommand(TwitterUser victim)
+        public DuelStartCommand(TwitterUser victim, TwitterUser aggressor)
         {
-            _Victim = victim;
+            Victim = victim;
+            Aggressor = aggressor;
         }
     }
 }
