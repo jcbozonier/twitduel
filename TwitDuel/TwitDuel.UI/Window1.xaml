@@ -3,6 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Window1" Height="300" Width="300">
     <Grid>
-        
+        <Button Height="23" Margin="101,71,79,0" Name="button1" VerticalAlignment="Top" Click="button1_Click">Check Twitter</Button>
     </Grid>
 </Window>

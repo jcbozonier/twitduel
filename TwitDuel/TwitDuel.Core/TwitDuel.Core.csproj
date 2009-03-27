@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\TwitterComm\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -43,10 +47,28 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Yedda.Twitter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\TwitterComm\Yedda.Twitter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DuelCommands\DoNothingDuelCommand.cs" />
+    <Compile Include="DuelCommands\DuelCommand.cs" />
+    <Compile Include="DuelCommands\DuelStartCommand.cs" />
+    <Compile Include="DuelInterpreter.cs" />
+    <Compile Include="Symbols\Symbol.cs" />
+    <Compile Include="Symbols\SymbolInterpreter.cs" />
+    <Compile Include="Symbols\TagSymbol.cs" />
+    <Compile Include="Symbols\UserSymbol.cs" />
+    <Compile Include="Tweet.cs" />
+    <Compile Include="TweetArena.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TweetDataAccess.cs" />
+    <Compile Include="TweetInterpreter.cs" />
+    <Compile Include="TweetLexer.cs" />
+    <Compile Include="TweetRepository.cs" />
+    <Compile Include="TwitterUser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

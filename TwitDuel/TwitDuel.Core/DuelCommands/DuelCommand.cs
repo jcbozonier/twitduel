@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TwitDuel.Core
+namespace TwitDuel.Core.DuelCommands
 {
-    public class Class1
+    public class DuelCommand
     {
     }
 }
