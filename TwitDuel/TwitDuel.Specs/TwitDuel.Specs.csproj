@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="FakeDataAccess.cs" />
     <Compile Include="IoC_Configuration.cs" />
+    <Compile Include="SpecUnit.cs" />
     <Compile Include="When_activated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

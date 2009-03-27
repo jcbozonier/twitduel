@@ -11,31 +11,31 @@ namespace TwitDuel.Specs
         [Test]
         public void It_should_send_a_message()
         {   
-            Assert.IsTrue(WasMessageSent);
+            WasMessageSent.ShouldBeTrue();
         }
 
         [Test]
         public void It_should_include_the_victim()
         {
-            Assert.IsTrue(MessageSent.Contains(VictimName));
+            MessageSent.Contains(VictimName).ShouldBeTrue();
         }
 
         [Test]
         public void It_should_include_the_aggressor()
         {
-            Assert.IsTrue(MessageSent.Contains(AggressorName));
+            MessageSent.Contains(AggressorName).ShouldBeTrue();
         }
 
         [Test]
         public void It_should_include_the_twitter_tag()
         {
-            Assert.IsTrue(MessageSent.Contains(TwitterTag));
+            MessageSent.Contains(TwitterTag).ShouldBeTrue();
         }
 
         [Test]
         public void It_should_be_under_the_twitter_size_limit()
         {
-            Assert.IsTrue(MessageSent.Length < 140);
+            MessageSent.Length.ShouldBeLessThan(140);
         }
 
         protected override void Because()
